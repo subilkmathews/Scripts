@@ -53,7 +53,6 @@ echo "<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>> " >> /var/mqm/tmp/AMQERRlog.out
 echo " " >> /var/mqm/tmp/AMQERRlog.out
 done
 #filter out the error logs with 2 dates
-#Thanks Ed Breuer. 
 day=$(date +%d);let "day -=1"; month=$(date +%m); year=$(date +%Y);echo $month/$day/$year ; sed  -n '/'"$month"'\/'"$day"'\/'"$year"'/,$p'  /var/mqm/tmp/AMQERRlog.out >> /var/mqm/tmp/24hrmqlog.out
 day=$(date +%d); month=$(date +%m); year=$(date +%Y);echo $month/$day/$year ; sed  -n '/'"$month"'\/'"$day"'\/'"$year"'/,$p'  /var/mqm/tmp/AMQERRlog.out >> /var/mqm/tmp/24hrmqlog.out 
 file2=/var/mqm/tmp/AMQFDC.txt
